@@ -7,64 +7,92 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITextFieldDelegate {
+class ViewController: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource{
+
 
     
-    
-    @IBOutlet weak var textLabel: UILabel!
+    var textArray = [String]()
     
     @IBOutlet weak var textField: UITextField!
     
-    var text = String()
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         textField.delegate = self
         
-        
+        tableView.delegate = self
+        tableView.dataSource = self
         
       
     }
 
     
-    @IBAction func next(_ sender: Any) {
-        //ラベルに出力
+
+ 
+
+  
+    //セルの数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return textArray.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    //セルの情報
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        text = textField.text!
-        textLabel.text = text
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        cell.textLabel!.text = textArray[indexPath.row]
+        cell.imageView!.image = UIImage(named: "chekImage")
         
-        performSegue(withIdentifier: "SegueNext", sender: nil)
+        return cell
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-        if segue.identifier == "SegueNext" {
-            
-            let nextVC = segue.destination as! SegueNextViewController
-            
-            nextVC.nextText = text
-            
-        }
+    
+//    /高さ
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.frame.size.height/13
     }
     
     
-    
-    
+    //リターンキー
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textArray.append(textField.text!)
         textField.resignFirstResponder()
+        textField.text = ""
+        tableView.reloadData()
+        
         return true
-    }
-    
-    @IBAction func textFieldAction(_ sender: Any) {
-       
-        
         
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        let nextVC = storyboard?.instantiateViewController(identifier: "next") as! NextViewController
+        
+          nextVC.nextLabel = textArray[indexPath.row]
+        
+        
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
+
+
+    
+    
+    
+    
+
 }
 

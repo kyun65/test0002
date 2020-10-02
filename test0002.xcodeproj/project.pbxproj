@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF57CBFF2526ED770046DBD2 /* SegueNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57CBFE2526ED770046DBD2 /* SegueNextViewController.swift */; };
+		DF57CC1425270C190046DBD2 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57CC1325270C190046DBD2 /* NextViewController.swift */; };
 		DF845A302525FE6900460C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF845A2F2525FE6900460C25 /* AppDelegate.swift */; };
 		DF845A322525FE6900460C25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF845A312525FE6900460C25 /* SceneDelegate.swift */; };
 		DF845A342525FE6900460C25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF845A332525FE6900460C25 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		DF57CBFE2526ED770046DBD2 /* SegueNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueNextViewController.swift; sourceTree = "<group>"; };
+		DF57CC1325270C190046DBD2 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		DF845A2C2525FE6900460C25 /* test0002.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test0002.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF845A2F2525FE6900460C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF845A312525FE6900460C25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				DF845A382525FE6B00460C25 /* Assets.xcassets */,
 				DF845A3A2525FE6B00460C25 /* LaunchScreen.storyboard */,
 				DF845A3D2525FE6B00460C25 /* Info.plist */,
+				DF57CC1325270C190046DBD2 /* NextViewController.swift */,
 			);
 			path = test0002;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF57CC1425270C190046DBD2 /* NextViewController.swift in Sources */,
 				DF845A342525FE6900460C25 /* ViewController.swift in Sources */,
 				DF845A302525FE6900460C25 /* AppDelegate.swift in Sources */,
 				DF845A322525FE6900460C25 /* SceneDelegate.swift in Sources */,
